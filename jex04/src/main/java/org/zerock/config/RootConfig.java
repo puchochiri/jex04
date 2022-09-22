@@ -8,6 +8,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -16,6 +17,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @ComponentScan(basePackages= {"org.zerock.service"})
 @ComponentScan(basePackages= {"org.zerock.sample"})
 @ComponentScan(basePackages= {"org.zerock.aop"})
+@EnableAspectJAutoProxy
 @MapperScan(basePackages= {"org.zerock.mapper"})
 public class RootConfig {
 	

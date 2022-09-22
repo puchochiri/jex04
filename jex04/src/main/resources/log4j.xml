@@ -31,13 +31,7 @@
 	<logger name="org.springframework.web">
 		<level value="info" />
 	</logger>
-
-	<!-- Root Logger -->
-	<root>
-		<priority value="info" />
-		<appender-ref ref="console" />
-	</root>
-		<logger name="jdbc.audit">
+	<logger name="jdbc.audit">
 		<level value="warn" />
 	</logger>
 	<logger name="jdbc.resultset">
@@ -46,4 +40,11 @@
 	<logger name="jdbc.connection">
 		<level value="warn" />
 	</logger>
+
+	<!-- Root Logger -->
+	<root>
+		<priority value="info" />
+		<appender-ref ref="console" />
+	</root>
+
 </log4j:configuration>
