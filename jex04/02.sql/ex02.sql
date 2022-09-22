@@ -59,26 +59,8 @@ alter table tbl_reply add constraint pk_reply primary key(rno);
 alter table tbl_reply add constraint fk_reply_board
 foreign key (bno) references tbl_board (bno);
 
-
-// 인덱스 생성
 create index idx_reply on tbl_reply (bno desc, rno asc);
 
-select /*+INDEX(tbl_reply idx_reply)*/
-    rownum rn, bno, rno, reply, replyer, replyDate, updatedate
-    from tbl_reply
-    where bno = 4
-    and rno>0
+create table tbl_sample1(col1 varchar2(500))
 
-select rno, bno, reply, replyer, replydate, updatedate
-from
-    (
-        select /*+INDEX(tbl_reply idx_reply) */
-            rownum rn, bno, rno, reply, replyer, replyDate, updatedate
-        from tbl_reply
-        where   bno = 4
-                and rno > 0
-                and rownum <= 20
-                    
-    ) where rn > 10    
-    
-    
+create table tbl_sample2(col2 varchar2(50))
